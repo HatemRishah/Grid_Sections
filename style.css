@@ -1,18 +1,28 @@
 * {
   box-sizing: border-box;
 }
+
 body {
+  margin: 0;
   font-size: 13px;
   background-color: hsl(260, 100%, 95%);
   font-weight: 500;
   color: white;
   font-family: "Barlow Semi Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-main {
-  padding: 12px;
-}
+
 footer {
   color: black;
+  text-align: center;
+  padding: 60px 0;
+  margin-top: auto;
+}
+
+main {
+  padding: 12px;
 }
 a {
   color: hsl(263, 55%, 52%);
@@ -32,6 +42,7 @@ a {
 #four,
 #five {
   border-radius: 8px;
+  padding: 24px 32px;
 }
 #three,
 #four {
@@ -41,6 +52,10 @@ a {
 #one {
   grid-area: 1 / 1 / 2 / 3;
   background-color: hsl(263, 55%, 52%);
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 20%;
+  background-size: 102px;
 }
 #two {
   grid-area: 1 / 3 / 2 / 4;
@@ -49,7 +64,117 @@ a {
 #three {
   grid-area: 1 / 4 / 3 / 5;
 }
+
 #five {
   grid-area: 2 / 2 / 3 / 4;
   background-color: hsl(219, 29%, 14%);
+}
+div > img {
+  border-radius: 50%;
+  width: 24px;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+p {
+  opacity: 70%;
+  line-height: 1.5;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.username {
+  font-size: 11px;
+  opacity: 50%;
+}
+
+#one .info img {
+  border: 2px solid hsl(263, 55%, 65%);
+}
+
+@media (max-width: 500px) {
+  #grid {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: auto;
+    margin: 50px auto;
+  }
+
+  #one,
+  #two,
+  #three,
+  #four,
+  #five {
+    grid-area: auto;
+  }
+  #three {
+    order: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  #grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #three {
+    order: 5;
+  }
+
+  #one {
+    background-position: top 0 right 10%;
+    background-size: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: auto;
+    width: 90vw;
+    margin: 50px auto;
+  }
+
+  #one {
+    grid-area: auto;
+    grid-column: span 2;
+  }
+  #two {
+    grid-area: auto;
+  }
+  #three {
+    grid-area: auto;
+    grid-column: span 2;
+  }
+  #four {
+    grid-area: auto;
+  }
+  #five {
+    grid-area: auto;
+    grid-column: span 2;
+  }
 }
