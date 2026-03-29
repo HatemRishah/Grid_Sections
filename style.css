@@ -95,17 +95,14 @@ p {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  font-size: 11px;
+  opacity: 50%;
 }
 
 .name {
   margin: 0;
   font-weight: 600;
   font-size: 13px;
-}
-
-.username {
-  font-size: 11px;
-  opacity: 50%;
 }
 
 #one .info img {
